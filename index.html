@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Anonymous Message Link</h2>
+
+<input id="webhook" placeholder="Paste Discord Webhook URL">
+<button onclick="create()">Generate Link</button>
+
+<p id="result"></p>
+
+<script>
+async function create() {
+
+let webhook = document.getElementById("webhook").value
+
+let res = await fetch("/create",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({webhook})
+})
+
+let data = await res.json()
+
+document.getElementById("result").innerHTML =
+`Your link: <a href="${data.link}">${data.link}</a>`
+
+}
+</script>
+
+</body>
+</html>
