@@ -1,0 +1,13 @@
+{
+  "name": "anonymous-discord-messages",
+  "version": "1.0.0",
+  "description": "Send anonymous messages to Discord webhooks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
